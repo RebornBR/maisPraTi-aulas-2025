@@ -1,0 +1,157 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    height: 90vh;
+    border: solid ;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 0.5rem;
+}
+
+#linha{
+    border: solid 1px;
+    width: 99%;
+}
+
+#input-item{
+    width: 250px;
+    padding: 5px;
+    text-align: center;
+}
+
+#btn-adicionar{
+    background-color: #57bcff;
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    width: 80px;
+    height: 30px;
+}
+
+#btn-limpar{
+    background-color: rgb(255, 135, 135);
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    width: 80px;
+    height: 30px;
+}
+
+button{
+    background-color: rgb(255, 135, 135);
+}
+
+table {
+    display: none;
+    table-layout: fixed;
+    margin-top: 5px;
+    max-width: 100%;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #57bcff;
+    color: rgb(0, 0, 0);
+}
+
+thead th {
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+}
+
+thead th.nome-item{
+    width: 75%;
+}
+
+thead th.compra{
+    width: 25%;
+}
+
+td {
+    text-align: center;
+    border-bottom: solid #57bcff 1px;
+    padding: 3px;
+}
+
+td input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background-color: #57bcff;;
+}
+
+#filtros{
+    color: black;
+    font-size: 15px;
+    margin: 5px;
+}
+
+#filtros select{
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+#filtros select option{
+    background-color: #57bcff
+}
+
+#contadores {
+    color: black;
+    font-weight: bold;
+}
+
+#contador-total{
+    color: #57bcff;
+}
+
+#contador-pendentes{
+    color: red;
+}
+
+#contador-comprados{
+    color: rgb(2, 185, 2)
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+    #filtros{
+        display: flex;
+        flex-direction: column;
+    }
+}

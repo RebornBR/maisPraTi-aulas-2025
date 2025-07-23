@@ -1,0 +1,99 @@
+<!-- 
+    Estrutura da página:
+
+    - Um cabeçalho com menu de navegação.
+    - Seção "galeria" com duas imagens.
+    - Seção "demonstração" com um vídeo e um link para o YouTube.
+    - Um rodapé com links de email (mailto) e telefone (tel).
+
+    Utilizar tags semânticas sempre que possível.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Aula 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            width: 80%;
+        }
+        .galeria {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 5%;
+        }
+        img {
+            width: 50%;
+            margin: 10px 0;
+        }
+        p{
+            color: black;
+            background-color: rgb(207, 207, 207);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#secao-galeria">Galeria</a>
+        <a href="#Batman">Batman</a>
+        <a href="#Demolidor">Demolidor</a>
+        <a href="#Tutorial-Cosplay">Cosplay</a>
+    </header>
+    <div class="container">
+        <h1 id="secao-galeria">Galeria de herois</h1>
+        <section class="galeria">
+            <h3 id="Batman">Batman, herói da DC</h3>
+            <img src="assets/Batman.jpg" alt="Logo do Batman">
+            <p> 
+                Batman (lit. "Homem-morcego") é um personagem fictício e super-herói da editora norte-americana DC Comics, 
+                criado pelo escritor Bill Finger a partir dos esboços do desenhista Bob Kane, 
+                aparecendo pela primeira vez na revista Detective Comics #27 (maio de 1939) com o nome "Bat-Man".
+            </p>
+            <h3 id="Demolidor">Demolidor, herói da Marvel</h3> 
+            <img src="assets/Daredevil.jpg" alt="Imagem do Demolidor">
+            <p> 
+                Demolidor (como é conhecido no Brasil e em Portugal; Daredevil no original em inglês) é um personagem fictício que aparece nas histórias em quadrinhos 
+                publicadas pela Marvel Comics. Um super-herói criado pelo escritor/editor Stan Lee e pelo artista Bill Everett com algumas contribuições de Jack Kirby. 
+                O Demolidor apareceu pela primeira vez em Daredevil #1 (abril de 1964). A alcunha do personagem é "Homem Sem Medo" (The Man Without Fear).
+            </p>
+        </section> 
+        <section class="galeria">
+            <h1 id="Tutorial-Cosplay">Tutorial de cosplay</h1>
+            <a href="https://www.youtube.com/watch?v=UGz7eLmy7A8"><h3>Batman:</h3></a>
+            <iframe src="https://www.youtube.com/embed/UGz7eLmy7A8"
+             title="Cómo Hacer el TRAJE De BATMAN - DIY - Batitraje Parte 3" frameborder="0" allow="accelerometer; autoplay; 
+             clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+            <a href="https://www.youtube.com/watch?v=pdp2KSm99AM"><h3>Demolidor:</h3></a>
+            <iframe src="https://www.youtube.com/embed/pdp2KSm99AM" title="How to make the new DAREDEVIL Helmet from She-Hulk" frameborder="0" 
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+             allowfullscreen>
+            </iframe>
+        </section>
+    </div>
+</body>
+</html>
