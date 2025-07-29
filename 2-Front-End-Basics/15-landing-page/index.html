@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>Nintendo | Gaming Website Landing Page</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -11,25 +13,36 @@
 <body>
     <header>
         <a href="" class="logo">
-            <img src="assets/images/nintendo-switch.png" alt="Nintendo Switch Logo" height="240" width="240">
+            <img src="assets/images/nintendo-switch.png" alt="nintendo switch logo" height="240" width="240" />
         </a>
         <a href="#" class="menu"> <ion-icon name="grid-outline"></ion-icon></a>
         <ul class="nav">
-            <li><a href="https://www.nintendo.com/us/whatsnew/" target="_blank">Switch News</a></li>
-            <li><a href="https://www.nintendo.com/pt-br/switch/online/" target="_blank">Switch Online</a></li>
-            <li><a href="https://www.nintendo.com/us/switch/online/" target="_blank">Switch Classic</a></li>
+            <li>
+                <a href="https://www.nintendo.com/us/whatsnew/" target="_blank">switch news</a>
+            </li>
+            <li>
+                <a href="https://www.nintendo.com/pt-br/switch/online/" target="_blank">switch online</a>
+            </li>
+            <li>
+                <a href="https://www.nintendo.com/us/switch/online/nintendo-switch-online/classic-games/"
+                    target="_blank">switch classic</a>
+            </li>
         </ul>
-
         <div class="search">
-            <input type="text" id="gameInput" placeholder="Search">
+            <input type="text" id="gameInput" placeholder="Search" />
             <ion-icon name="search-outline" id="searchIcon"></ion-icon>
         </div>
+        <!--Mobile Screen-->
+        <ul class="nav-collapse">
+            <li><a href="#">switch news</a></li>
+            <li><a href="#">switch online</a></li>
+            <li><a href="#">switch classic</a></li>
+        </ul>
     </header>
-
     <div class="swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide" id="slide-1">
-                <img src="assets/images/super_mario_odyssey_dinosaur_4k.jpeg" alt="Super Mario Odyssey Banner">
+                <img src="assets/images/super_mario_odyssey_dinosaur_4k.jpeg" alt="Super Mario Odyssey Banner" />
                 <div class="backscene"></div>
                 <div class="banner">
                     <div class="left">
@@ -53,7 +66,7 @@
                                 <div class="content">
                                     <span class="subtitle">Super Mario Odyssey</span>
                                     <h4>COMPRE AGORA</h4>
-                                    <span>Plataforma, Aventura, Ação</span>
+                                    <span>Aventura</span>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +80,7 @@
                                     <ion-icon name="checkmark-circle-outline"></ion-icon>
                                     Data de Lançamento
                                 </h4>
-                                <p>10 de Outubro de 2015</p>
+                                <p>28 de janeiro de 2022</p>
                             </li>
                              <li>
                                 <h4>
@@ -217,10 +230,52 @@
             </div>
 
         </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
-    </div>
 
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <ul class="sci">
+        <li><a href="https://github.com/ThalesAbdon" target="_blank"><ion-icon name="logo-github"></ion-icon></li></a>
+        <li><a href="https://br.linkedin.com/in/thales-abdon" target="_blank"><ion-icon name="logo-linkedin"></ion-icon>
+        </li></a>
+        <li><a href="https://abdonthales.netlify.app/" target="_blank"><ion-icon name="add-outline"></ion-icon></li></a>
+        <li><ion-icon name="mail-outline" id="openEmailModal"></ion-icon></li>
+
+        <div id="emailModal" class="modal">
+            <div class="modal-content">
+                <span class="close">X</span>
+                <h2>Formulário de Contato por Email</h2>
+                <form id="emailForm">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" class="form-control" required></textarea>
+                    </div>
+
+
+                    <button type="submit" class="btn-submit">Enviar</button>
+                </form>
+                <img src="assets/images/pokemons.gif" alt="GIF Decorativo Pokemons" class="pokemons-gif">
+                <img src="assets/images/charizard-pokemon.gif" alt="GIF Decorativo Charizard" class="charizard-gif">
+                <img src="assets/images/mario-runner.gif" alt="GIF Decorativo Mário Correndo" class="mario-runner-gif">
+            </div>
+        </div>
+    </ul>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
