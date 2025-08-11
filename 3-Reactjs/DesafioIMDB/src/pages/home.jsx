@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import FilmeCard from '../component/FilmeCard.jsx';
+import ModalFilmeDetalhe from '../component/ModalFilmeDetalhe.jsx';
+import '../styles/home.css';
 
 function Home() {
     const [filmeInput, setFilmeInput] = useState("");
@@ -8,12 +10,14 @@ function Home() {
     const [filmeDetalhes, setFilmeDetalhes] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [modalAberto, setModalAberto] = useState(false);
 
 
 
     const apiKey = "b12bcf6e"
 
-    async function procurarFilmes() {
+    async function procurarFilmes(e) {
+        e.preventDefault();
         setError(null);
         const getSearch = `https://www.omdbapi.com/?apikey=${apiKey}&s=${filmeInput}`
         setLoading(true);
@@ -37,37 +41,48 @@ function Home() {
     async function detalhesFilme(imdbID) {
         setError(null);
         const getDetalhes = `https://www.omdbapi.com/?apikey=${apiKey}&i=${imdbID}`;
-        setLoading(true);
         try {
             const response = await axios.get(getDetalhes);
             if (response.data) {
-                setFilmeDetalhes(response.data);
+                return response.data;
             } else {
-                setFilmeDetalhes(null);
                 setError('Detalhes do filme não encontrados.');
             }
-            setLoading(false);
         } catch (err) {
             setError('Erro ao carregar detalhes do filme:');
-            setLoading(false);
+        }
+    }
+
+    async function clickModalFilmeDetalhe(imdbID) {
+        const detalhes = await detalhesFilme(imdbID);
+        if (detalhes) {
+            setFilmeDetalhes(detalhes);
+            setModalAberto(true);
         }
     }
 
     return (
         <div className="container">
-            <h1>Bem-vindo ao Desafio IMDB</h1>
-            <input type="text"
-                placeholder='Digite o nome do filme'
-                value={filmeInput}
-                onChange={(e) => setFilmeInput(e.target.value)}
-            />
-            <button onClick={procurarFilmes}>Buscar</button>
+            <form className='pesquisa-filme' onSubmit={procurarFilmes}>
+                    <input type="text"
+                        placeholder='Digite o nome do filme'
+                        value={filmeInput}
+                        onChange={(e) => setFilmeInput(e.target.value)}
+                    />
+                    <button type='submit' id='butao-pesquisa'>Buscar</button>
+            </form>
             <FilmeCard
                 filmes={filmes}
                 loading={loading}
                 error={error}
-                detalhesFilme={detalhesFilme}
+                clickModalDetalheFilme={clickModalFilmeDetalhe}
             />
+            {modalAberto && filmeDetalhes && (
+                <ModalFilmeDetalhe
+                    filmeDetalhe={filmeDetalhes}
+                    onClose={() => setModalAberto(false)}
+                />
+            )}
         </div>
     )
 }
