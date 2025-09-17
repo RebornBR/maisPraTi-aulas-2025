@@ -1,4 +1,4 @@
-package ExercicioRelacionamentoObjetos;
+package ExercicioRelacionamentoDeObjetos;
 
 public class Carro extends Veiculo {
     public Carro(String marca, String modelo, int ano) {
@@ -7,6 +7,6 @@ public class Carro extends Veiculo {
 
     @Override
     public void tipoVeiculo() {
-        System.out.println("Tipo de Veículo: Carro");
+        System.out.println("Tipo: Carro");
     }
 }

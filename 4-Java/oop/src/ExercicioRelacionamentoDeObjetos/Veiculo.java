@@ -1,4 +1,4 @@
-package ExercicioRelacionamentoObjetos;
+package ExercicioRelacionamentoDeObjetos;
 
 public abstract class Veiculo {
     protected String marca;
@@ -11,7 +11,7 @@ public abstract class Veiculo {
         this.ano = ano;
     }
 
-    public void exibirInformacoes() {
+    public void exibirInformacoes(){
         System.out.println("Marca: " + marca);
         System.out.println("Modelo: " + modelo);
         System.out.println("Ano: " + ano);

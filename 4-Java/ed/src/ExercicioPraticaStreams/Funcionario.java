@@ -1,4 +1,4 @@
-package exercicioPraticaCollection;
+package ExercicioPraticaStreams;
 
 public class Funcionario {
     private String nome;
@@ -29,14 +29,6 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
-    }
-
     public int getIdade() {
         return idade;
     }
@@ -45,8 +37,11 @@ public class Funcionario {
         this.idade = idade;
     }
 
-    @Override
-    public String toString() {
-        return this.nome + " [ " + this.cargo + " ]";
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 }
